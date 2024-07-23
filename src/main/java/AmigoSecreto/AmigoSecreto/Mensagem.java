@@ -1,6 +1,6 @@
-package ExercicioTresPOO.AmigoSecreto;
+package AmigoSecreto.AmigoSecreto;
 
-public class Mensagem {
+public abstract class Mensagem {
 
     private String texto;
     private String emailRemetente;
@@ -11,6 +11,7 @@ public class Mensagem {
         this.emailRemetente = emailRemetente;
         this.anonima = anonima;
     }
+
     public Mensagem(){
         this("","", false);
     }
@@ -23,6 +24,8 @@ public class Mensagem {
         this.texto = texto;
     }
 
+    public abstract String getTextoCompletoAExibir();
+
     public String getEmailRemetente() {
         return emailRemetente;
     }
@@ -32,7 +35,8 @@ public class Mensagem {
     }
 
     public boolean isAnonima() {
-        return this.anonima;
+        return anonima;
     }
+
 
 }

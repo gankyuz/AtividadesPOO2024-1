@@ -1,11 +1,13 @@
-package ExercicioTresPOO.AmigoSecreto;
+package AmigoSecreto.AmigoSecreto;
 
 public class MensagemParaTodos extends Mensagem{
+
     public MensagemParaTodos(String texto, String emailRemetente, boolean anonima){
-        super(texto, emailRemetente, anonima);
+        super(texto, emailRemetente, false);
     }
+    @Override
     public String getTextoCompletoAExibir(){
-        if(isAnonima()){
+        if (isAnonima()){
             String texto = getTexto();
             return "Esse email foi enviado para todos de forma anônima"+
                     "\nTexto: "+texto;
@@ -17,5 +19,4 @@ public class MensagemParaTodos extends Mensagem{
                     "\nTexto: "+texto;
         }
     }
-
 }
