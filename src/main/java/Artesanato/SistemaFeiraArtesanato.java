@@ -12,7 +12,6 @@ public interface SistemaFeiraArtesanato {
      * @return true se o item foi cadastrado, ou false caso ele já exista no sistema
      */
     public boolean cadastrarItem(ItemDeArtesanato item);
-
     /**
      * Pesquisa todos os itens cuja nome começa com o nome passado como parâmetro
      * @param nome O nome a pesquisar
