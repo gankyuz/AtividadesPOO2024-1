@@ -1,8 +1,9 @@
 package AmigoSecreto.AmigoSecreto;
 
-import AmigoSecreto.Exceptions.*;
-import AmigoSecreto.MensagemParaAlguem;
-import AmigoSecreto.MensagemParaTodos;
+import AmigoSecreto.AmigoSecreto.Exceptions.AmigoExistenteException;
+import AmigoSecreto.AmigoSecreto.Exceptions.AmigoNaoCadastradoException;
+import AmigoSecreto.AmigoSecreto.Exceptions.AmigoSorteadoNaoCadastradoException;
+import AmigoSecreto.AmigoSecreto.Exceptions.ListaVaziaException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +74,7 @@ public class SistemaAmigo {
         throw new AmigoNaoCadastradoException("Amigo não cadastrado");
     }
 
-    public String pesquisaAmigoSecretoDe(String emailDaPessoa) throws ListaVaziaException, AmigoNaoCadastradoException, AmigoSorteadoNaoCadastradoException{
+    public String pesquisaAmigoSecretoDe(String emailDaPessoa) throws ListaVaziaException, AmigoNaoCadastradoException, AmigoSorteadoNaoCadastradoException {
         if (this.amigos.isEmpty()) throw new ListaVaziaException("Lista de amigos está vazia");
 
         for (Amigo amigoSecreto: this.amigos){

@@ -1,6 +1,7 @@
 package AmigoSecreto.AmigoSecreto;
 
-import AmigoSecreto.Exceptions.AmigoExistenteException;
+import AmigoSecreto.AmigoSecreto.Exceptions.AmigoExistenteException;
+
 
 
 import java.util.Scanner;
