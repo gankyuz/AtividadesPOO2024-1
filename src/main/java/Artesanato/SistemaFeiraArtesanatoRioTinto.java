@@ -1,22 +1,30 @@
 package Artesanato;
 
+import Artesanato.Exceptions.CodigoInvalidoException;
+import Artesanato.Exceptions.ItemInexistenteException;
+import Artesanato.Exceptions.ItemJaExisteException;
+
 import java.util.*;
 
 public class SistemaFeiraArtesanatoRioTinto implements SistemaFeiraArtesanato {
 
     private Map<String, ItemDeArtesanato> itensDeArtesanato;
+    public static final String PREFIXO_CODIGO = "COD";
 
     public SistemaFeiraArtesanatoRioTinto(){
         this.itensDeArtesanato = new HashMap<>();
     }
 
     @Override
-    public boolean cadastrarItem(ItemDeArtesanato item) {
+    public void cadastrarItem(ItemDeArtesanato item) throws CodigoInvalidoException, ItemJaExisteException {
         if (this.itensDeArtesanato.containsKey(item.getCodigo())){
-            return false;
+            throw new ItemJaExisteException("Já existe item com o código: "+item.getCodigo());
         }else {
-            this.itensDeArtesanato.put(item.getCodigo(),item);
-            return true;
+            if (item.getCodigo().startsWith(PREFIXO_CODIGO)){
+                this.itensDeArtesanato.put(item.getCodigo(),item);
+            }else {
+                throw new CodigoInvalidoException("Código não começa com prefixo 'COD'");
+            }
         }
 
     }

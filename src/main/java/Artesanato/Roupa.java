@@ -39,4 +39,10 @@ public class Roupa extends ItemDeArtesanato{
     public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
     }
+    public String getDescricao(){
+        return "Roupa de código "+super.getCodigo()+", de nome "+super.getNome()+", e de tamanho "+this.tamanho;
+    }
+    public String toString(){
+        return this.getDescricao();
+    }
 }

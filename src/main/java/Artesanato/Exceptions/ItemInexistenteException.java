@@ -1,4 +1,4 @@
-package Artesanato;
+package Artesanato.Exceptions;
 
 public class ItemInexistenteException extends Exception{
 

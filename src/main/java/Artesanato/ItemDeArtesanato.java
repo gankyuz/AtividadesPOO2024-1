@@ -2,7 +2,7 @@ package Artesanato;
 
 import java.util.Objects;
 
-public class ItemDeArtesanato implements Comparable<ItemDeArtesanato> {
+public abstract class ItemDeArtesanato implements Comparable<ItemDeArtesanato> {
 
     private String codigo;
     private String nome;
@@ -13,6 +13,7 @@ public class ItemDeArtesanato implements Comparable<ItemDeArtesanato> {
         this.nome = nome;
         this.preco = preco;
     }
+    public abstract String getDescricao();
 
     public ItemDeArtesanato() {
         this("","",0.0);
@@ -57,10 +58,12 @@ public class ItemDeArtesanato implements Comparable<ItemDeArtesanato> {
         return codigo != null ? codigo.hashCode() : 0;
     }
 
-    public String toString(){
-        return "ITEM" +
-                "\nNome: "+this.nome+
-                "\nPreço: "+this.preco;
+    @Override
+    public String toString() {
+        return "ItemDeArtesanato de" +
+                "codigo '" + codigo + '\'' +
+                ", nome '" + nome + '\'' +
+                ", e preco " + preco ;
     }
 
     @Override
