@@ -54,7 +54,6 @@ public class SistemaAmigo {
                 mensagensAnonimas.add(mensagemAnonima);
             }
         }
-        if (mensagensAnonimas.isEmpty()) throw new ListaVaziaException("Lista de mensagens está vazia");
         return mensagensAnonimas;
     }
 

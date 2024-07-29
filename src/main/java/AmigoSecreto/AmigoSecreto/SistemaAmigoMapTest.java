@@ -2,6 +2,7 @@ package AmigoSecreto.AmigoSecreto;
 
 import AmigoSecreto.AmigoSecreto.Exceptions.AmigoExistenteException;
 import AmigoSecreto.AmigoSecreto.Exceptions.AmigoNaoCadastradoException;
+import AmigoSecreto.AmigoSecreto.Exceptions.ListaVaziaException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,19 +19,29 @@ public class SistemaAmigoMapTest {
     void setUp(){
         this.sistema = new SistemaAmigoMap();
     }
-
     @Test
-    void testPesquisaECadastraAmigoMap() {
-        assertThrows(AmigoNaoCadastradoException.class, () -> sistema.pesquisaAmigo("gabi@gmail.com"));
-
+    void testSistemaAmigo(){
         try {
-            sistema.CadastraAmigoMap("Gabi", "gabi@gmail.com");
-            Amigo a = sistema.pesquisaAmigo("gabi@gmail.com");
-            assertEquals("gabi", a.getNome());
-            assertEquals("gabi@gmail.com", a.getEmail());
-        }catch (AmigoExistenteException | AmigoNaoCadastradoException e){
-            fail("Não deveria lançar exceção");
+            assertTrue(sistema.pesquisaTodasAsMensagensMap().isEmpty());
+        }catch (ListaVaziaException | AmigoExistenteException e){
+            assertThrows(AmigoNaoCadastradoException.class, () -> sistema.pesquisaAmigoMap("gabi@gmail.com"));
         }
     }
-
+    @Test
+    void testPesquisaECadastraAmigoMap(){
+        try {
+            sistema.pesquisaAmigoMap("ayla@teste.com");
+            fail("Deveria falhar pois não existe ainda");
+        }catch (AmigoNaoCadastradoException e){
+            //OK
+        }
+        try {
+            sistema.cadastraAmigoMap("ayla", "ayla@teste.com");
+            Amigo a = sistema.pesquisaAmigoMap("ayla@teste.com");
+            assertEquals("ayla",a.getNome());
+            assertEquals("ayla@teste.com", a.getEmail());
+        }catch (AmigoExistenteException | AmigoNaoCadastradoException e){
+            fail("Não deveriam lançar exceção");
+        }
+    }
 }
