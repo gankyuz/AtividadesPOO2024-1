@@ -21,13 +21,13 @@ public class ProgramaArtesanatoRioTinto {
                     item.setNome(JOptionPane.showInputDialog("Qual o nome do item?"));
                     item.setPreco(Double.parseDouble(JOptionPane.showInputDialog("Qual o preço do item?")));
                 }
-                try {
+                /**try {
                     sistema.cadastrarItem(item);
                     JOptionPane.showMessageDialog(null, "Item cadastrado com sucesso: " + item.getNome());
                 }catch (Exception e) {
                     JOptionPane.showMessageDialog(null, e.getMessage());
                     e.printStackTrace();
-                }
+                }**/
             } else if (opcao.equals("2")) {
                 String nomeItemAPesquisar = JOptionPane.showInputDialog("Digite o nome do item a pesquisar (Início do nome)");
                 List<ItemDeArtesanato> itensPorNome = sistema.pesquisarItensPeloNome(nomeItemAPesquisar);
