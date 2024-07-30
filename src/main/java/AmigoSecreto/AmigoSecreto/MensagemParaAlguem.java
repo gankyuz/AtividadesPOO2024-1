@@ -29,8 +29,14 @@ public class MensagemParaAlguem extends Mensagem{
             String texto = getTexto();
             String emailRemetente = getEmailRemetente();
             return "De: "+emailRemetente+
-                    "\nPara: \""+ emailDestinatario+"\""+
-                    "\nTexto "+texto;
+                    "\nPara: "+ emailDestinatario+
+                    "\nTexto: "+texto;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "MensagemParaAlguem\n" +
+                "Email Destinatário: "+ emailDestinatario;
     }
 }

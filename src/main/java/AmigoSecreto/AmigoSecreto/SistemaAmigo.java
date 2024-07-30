@@ -57,7 +57,7 @@ public class SistemaAmigo {
         return mensagensAnonimas;
     }
 
-    public List<Mensagem> pesquisaTodasAsMensagens() throws ListaVaziaException, AmigoNaoCadastradoException{
+    public List<Mensagem> pesquisaTodasAsMensagens() throws ListaVaziaException{
         if (this.mensagens.isEmpty()) throw new ListaVaziaException("Lista de mensagens está vazia");
         return this.mensagens;
     }

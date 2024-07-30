@@ -46,18 +46,18 @@ public class SistemaAmigoMap {
     public void enviarMensagemParaAlguemMap(String texto, String emailRemetente, String emailDestinatario, boolean ehAnonima){
         this.mensagens.put(mensagens.toString(), new MensagemParaAlguem(texto, emailRemetente, emailDestinatario, ehAnonima));
     }
-    public List<Mensagem> pesquisaMensagensAnonimasMap() throws ListaVaziaException{
-        List<Mensagem> mensagemsAnonimas = new LinkedList<>();
-        if (mensagens.isEmpty()) throw new ListaVaziaException("Lista de mensagens está vazia");
-        for(Mensagem mensagemAnonima: this.mensagens.values()){
-            if (mensagemAnonima.isAnonima()){
-                mensagemsAnonimas.add(mensagemAnonima);
+    public Map<String, Mensagem> pesquisaMensagensAnonimasMap()throws ListaVaziaException{
+        Map<String,Mensagem> mensagensAnonimas = new HashMap<>();
+        if (mensagens.isEmpty())throw new ListaVaziaException("A lista de mensagens está vazia");
+        for (Mensagem mensagemAnonimas: this.mensagens.values()){
+            if (mensagemAnonimas.isAnonima()){
+                mensagensAnonimas.put(mensagemAnonimas.getTextoCompletoAExibir() , mensagemAnonimas);
             }
         }
-        return mensagemsAnonimas;
+        return mensagensAnonimas;
     }
 
-    public Map<String, Mensagem> pesquisaTodasAsMensagensMap() throws ListaVaziaException, AmigoExistenteException{
+    public Map<String, Mensagem> pesquisaTodasAsMensagensMap() throws ListaVaziaException{
         if (this.mensagens.isEmpty()) throw new ListaVaziaException("Lista de amigos está vazia");
         return this.mensagens;
     }

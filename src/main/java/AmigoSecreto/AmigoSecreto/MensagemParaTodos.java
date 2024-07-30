@@ -14,9 +14,14 @@ public class MensagemParaTodos extends Mensagem{
         }else{
             String texto = getTexto();
             String emailRemetente = getEmailRemetente();
-            return "De: \""+emailRemetente+"\""+
+            return "De: "+emailRemetente+
                     "\nPara: Todos"+
                     "\nTexto: "+texto;
         }
+    }
+    public String toString(){
+        return "Mensagem Para Todos\n"+
+                "Mensagem: "+this.getTexto()+
+                "\nEmail Remetente: "+this.getEmailRemetente();
     }
 }

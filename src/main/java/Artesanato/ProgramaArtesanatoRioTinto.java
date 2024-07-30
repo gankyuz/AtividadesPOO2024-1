@@ -20,6 +20,7 @@ public class ProgramaArtesanatoRioTinto {
                     item.setCodigo(codigo);
                     item.setNome(JOptionPane.showInputDialog("Qual o nome do item?"));
                     item.setPreco(Double.parseDouble(JOptionPane.showInputDialog("Qual o preço do item?")));
+                    String tamanho = JOptionPane.showInputDialog("Qual o tamanho?");
                 }
                 /**try {
                     sistema.cadastrarItem(item);

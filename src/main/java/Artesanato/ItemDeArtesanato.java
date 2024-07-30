@@ -7,16 +7,18 @@ public abstract class ItemDeArtesanato implements Comparable<ItemDeArtesanato> {
     private String codigo;
     private String nome;
     private double preco;
+    private TipoItem tipo;
 
-    public ItemDeArtesanato(String codigo, String nome, double preco) {
+    public ItemDeArtesanato(String codigo, String nome, double preco, TipoItem tipo) {
         this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;
+        this.tipo = tipo;
     }
     public abstract String getDescricao();
 
     public ItemDeArtesanato() {
-        this("","",0.0);
+        this("","",0.0,TipoItem.INDEFINIDO);
     }
 
     public String getCodigo() {

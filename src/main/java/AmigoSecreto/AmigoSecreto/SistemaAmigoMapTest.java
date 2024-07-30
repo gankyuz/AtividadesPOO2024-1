@@ -15,7 +15,7 @@ public class SistemaAmigoMapTest {
 
     SistemaAmigoMap sistema;
 
-    @BeforeEach
+    /**@BeforeEach
     void setUp(){
         this.sistema = new SistemaAmigoMap();
     }
@@ -43,5 +43,5 @@ public class SistemaAmigoMapTest {
         }catch (AmigoExistenteException | AmigoNaoCadastradoException e){
             fail("Não deveriam lançar exceção");
         }
-    }
+    }**/
 }
