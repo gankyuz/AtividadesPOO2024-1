@@ -22,7 +22,7 @@ public class ProgramaAmigoSecreto {
         }
 
         sistema.enviarMensagemParaAlguem("eai", "gabi@gmail.com", "vitoria@gmail.com", false);
-        sistemaMap.enviarMensagemParaAlguemMap("lala", "vitoria@gmail.com","gabi@gmail.com", true);
+        /**sistemaMap.enviarMensagemParaAlguemMap("lala", "vitoria@gmail.com","gabi@gmail.com", true);
 
         try{
             System.out.print(sistemaMap.pesquisaMensagensAnonimasMap());
@@ -32,6 +32,6 @@ public class ProgramaAmigoSecreto {
             System.out.print("\n"+sistema.pesquisaTodasAsMensagens());
         }catch (ListaVaziaException e){
             System.out.println(e);
-        }
+        }**/
     }
 }
