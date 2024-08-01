@@ -6,6 +6,7 @@ import Artesanato.Exceptions.ItemJaExisteException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class SistemaFeiraArtesanatoRioTintoTest {
@@ -15,13 +16,11 @@ public class SistemaFeiraArtesanatoRioTintoTest {
         try{
             Roupa r = new Roupa();
             sistema.cadastrarItem(r);
-            ItemDeArtesanato item = sistema.pesquisaItensPeloCodigo(r.getCodigo());
+            fail("Não deve deixar cadastrar");
         }catch (CodigoInvalidoException e){
-            fail();
-        }catch (ItemJaExisteException e){
-            fail();
-        }catch (ItemInexistenteException e){
-            fail();
+            //ok
+        }catch (ItemJaExisteException e) {
+            fail("Não era para lançar exceptions");
         }
     }
 }
