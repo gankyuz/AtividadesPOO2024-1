@@ -28,8 +28,6 @@ public class SistemaAmigo {
         }
     }
     public Amigo pesquisaAmigo(String amigo) throws ListaVaziaException, AmigoNaoCadastradoException {
-        List<Amigo> listaPesquisa = new ArrayList<>();
-
         if (amigo.isEmpty()) throw new ListaVaziaException("A lista de amigos está vazia");
         for (Amigo amigoPesquisa: amigos){
            if (amigoPesquisa.getNome().equals(amigo)){

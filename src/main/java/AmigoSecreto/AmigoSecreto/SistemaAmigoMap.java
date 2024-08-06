@@ -27,7 +27,6 @@ public class SistemaAmigoMap {
     }
 
     public Amigo pesquisaAmigoMap(String emailAmigo) throws AmigoNaoCadastradoException, ListaVaziaException{
-        List<Amigo> listaPesquisa = new ArrayList<>();
         if (amigos.isEmpty()) throw new ListaVaziaException("A lista está vazia");
         for (Amigo amigoPesquisa: this.amigos.values()) {
             if (amigoPesquisa.getEmail().equals(emailAmigo)) {
