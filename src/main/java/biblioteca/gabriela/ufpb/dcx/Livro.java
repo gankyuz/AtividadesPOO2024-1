@@ -1,8 +1,9 @@
 package biblioteca.gabriela.ufpb.dcx;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Livro implements Comparable<Livro> {
+public class Livro implements Comparable<Livro>, Serializable {
 
     public String nome;
     public String autor;
